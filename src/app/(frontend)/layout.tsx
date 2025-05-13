@@ -1,18 +1,32 @@
 import React from 'react'
 import './styles.css'
+import { Geist } from 'next/font/google'
+import { AllProviders } from '@/components/providers/all'
+import { siteConfig } from '@/config/site'
+
+const geist = Geist({
+  subsets: ['latin'],
+})
 
 export const metadata = {
-  description: 'A blank template using Payload in a Next.js app.',
-  title: 'Payload Blank Template',
+  title: {
+    template: `%s | ${siteConfig.title}`,
+    default: siteConfig.title,
+  },
+  description: siteConfig.description,
 }
 
 export default async function RootLayout(props: { children: React.ReactNode }) {
   const { children } = props
 
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className={`${geist.className} antialiased`}
+      suppressHydrationWarning
+    >
       <body>
-        <main>{children}</main>
+        <AllProviders>{children}</AllProviders>
       </body>
     </html>
   )
