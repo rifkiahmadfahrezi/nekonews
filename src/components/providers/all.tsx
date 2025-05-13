@@ -1,6 +1,7 @@
 'use client'
 
 import { ThemeProvider } from './theme-provider'
+import { QueryProvider } from './query-provider'
 
 export const AllProviders = ({ children }: { children: React.ReactNode }) => (
   <>
@@ -10,7 +11,7 @@ export const AllProviders = ({ children }: { children: React.ReactNode }) => (
       enableSystem
       disableTransitionOnChange
     >
-      {children}
+      <QueryProvider>{children}</QueryProvider>
     </ThemeProvider>
   </>
 )
