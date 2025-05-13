@@ -27,7 +27,7 @@ export const menus = [
 export const Navbar = () => {
   return (
     <>
-      <header className="top-0 bg-background/20 backdrop-blur-lg sticky p-3">
+      <header className="top-0 bg-background/20 backdrop-blur-lg sticky p-3 z-50">
         <div className="container mx-auto px-3 flex items-center justify-between w-full">
           <Button variant={'ghost'} asChild>
             <Link href={'/'}>Nekonews</Link>
